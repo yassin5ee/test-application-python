@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Envois · Tests réseau{% endblock %}
+{% block content %}
+<h1>Tester les requêtes POST</h1>
+<p>Ces formulaires vérifient si un fichier ou un texte de test atteint réellement Flask. La taille du corps HTTP est limitée à 1 Mio.</p>
+<section>
+  <h2>Fichier de test</h2>
+  <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+    <label for="file">Petit fichier</label>
+    <input id="file" name="file" type="file" required>
+    <button type="submit">Envoyer le fichier</button>
+  </form>
+</section>
+<section>
+  <h2>Texte libre</h2>
+  <p>Utilisez uniquement des données fictives pour les futurs essais DLP.</p>
+  <form action="{{ url_for('upload_text') }}" method="post">
+    <label for="text">Texte de test</label>
+    <textarea id="text" name="text" rows="4" maxlength="10000">CONFIDENTIEL-6NLG-TEST</textarea>
+    <button type="submit">Envoyer le texte</button>
+  </form>
+</section>
+{% endblock %}

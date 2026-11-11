@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Accueil · Tests réseau{% endblock %}
+{% block content %}
+<h1>Application disponible</h1>
+<p>Cette application privée sert de cible aux essais Reverse Proxy et ZTNA. Son état local est actif lorsque cette page répond.</p>
+<ul>
+  <li><a href="{{ url_for('portal') }}">Portail</a> : vérifier l'accès et le transfert d'une page ordinaire.</li>
+  <li><a href="{{ url_for('admin') }}">Admin</a> : préparer les futurs contrôles d'accès.</li>
+  <li><a href="{{ url_for('upload') }}">Envois</a> : tester les requêtes POST de fichier et de texte.</li>
+  <li><a href="{{ url_for('observations') }}">Observations</a> : voir les informations reçues par Flask.</li>
+  <li><a href="{{ url_for('health') }}">Santé</a> : vérifier la réponse JSON du backend.</li>
+</ul>
+{% endblock %}

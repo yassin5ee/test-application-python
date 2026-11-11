@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Tests réseau SUP'COM–6NLG{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <strong>Application privée de test · SUP'COM–6NLG</strong>
+    <nav aria-label="Navigation principale">
+      <a href="{{ url_for('home') }}">Accueil</a>
+      <a href="{{ url_for('portal') }}">Portail</a>
+      <a href="{{ url_for('admin') }}">Admin</a>
+      <a href="{{ url_for('upload') }}">Envois</a>
+      <a href="{{ url_for('observations') }}">Observations</a>
+      <a href="{{ url_for('health') }}">Santé (JSON)</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+    <p class="request-id">Identifiant de corrélation : <code>{{ g.request_id }}</code></p>
+  </main>
+</body>
+</html>

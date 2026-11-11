@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · Tests réseau{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p>{{ message }}</p>
+{% if details %}
+<dl>
+  {% for label, value in details.items() %}
+  <dt>{{ label }}</dt><dd>{{ value }}</dd>
+  {% endfor %}
+</dl>
+{% endif %}
+<p><a href="{{ url_for('upload') }}">Revenir aux formulaires</a></p>
+{% endblock %}

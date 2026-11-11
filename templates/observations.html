@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Observations · Tests réseau{% endblock %}
+{% block content %}
+<h1>Observations reçues par Flask</h1>
+<p>Cette page aide à comparer les informations visibles dans le navigateur, Skyhigh et le backend.</p>
+<p>L'adresse du pair réseau décrit la connexion à Flask. Les en-têtes Host et X-Forwarded-* sont déclarés par l'émetteur et ne prouvent aucune identité.</p>
+<dl>
+  {% for label, value in observations.items() %}
+  <dt>{{ label }}</dt><dd>{{ value }}</dd>
+  {% endfor %}
+</dl>
+{% endblock %}
